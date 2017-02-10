@@ -1,0 +1,44 @@
+<ion-view>
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">Liste des courses </h1>
+        <div class="buttons" >
+            <button class="button button-icon ion-plus" ng-click="addItem()"></button>
+            <button class="button button-icon ion-android-delete color='delete" ng-click="deleteItem()"></button>
+        </div>
+    </ion-header-bar>
+
+
+
+
+
+
+    <ion-content>
+
+
+
+
+
+
+
+        <ion-list>
+            <ion-item ng-repeat="item in items">
+                {{item.name}}
+               <div class="delete">
+
+                <button class="button button-icon ion-android-delete" ng-click="deleteThis(item)">
+
+                </button>
+ </div>
+
+            </ion-item>
+        </ion-list>
+        © développée exclusivement pour Marie-Line Hazael <br>
+
+        © Wesley Isaac  --   Developpeur Web/ Mobile
+
+
+        ! WARNING le bouton en haut a droite supprime la liste de course entièrement !
+    </ion-content>
+
+
+</ion-view>
