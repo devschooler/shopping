@@ -12,30 +12,43 @@
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js')
           .then(() => console.log('service worker installed'))
-          .catch(err => console.log('Error', err));
+          .catch(err => console.log('Erro r', err));
       }
     </script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
+
+
     -->
-    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
-    <script>
+
+      <script src="lib/ionic/js/ionic.bundle.js"></script>
+      <script src="cordova.js"></script>
+
+      <script src="js/app.js"></script><script src="js/controller.js"></script>
+
+      <script src="js/queue.service.js"></script>
+      <script src="lib/moment/moment.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.js"></script>
 
 
-    </script>
+
+      <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
     <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controller.js"></script>
+
+
 
 
   </head>

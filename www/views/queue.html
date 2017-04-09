@@ -1,0 +1,29 @@
+<ion-view  view-title="Votre liste de course">
+  <ion-content ng-controller="QueueController">
+    <div class="padding">
+      <button class="button button-block button-balance" ng-click="add()">Ajouter  à la liste de course</button>
+
+
+
+    <ion-list>
+      <ion-item href="#/edit/{{person.$id}}" ng-repeat="person in queue" class="item-icon-right item-remove-animate">
+        <h2>{{person.name}}</h2>
+        <p><span am-time-ago="person.updatedTime">
+
+
+        </span> </br> Quantité: {{person.quantity}}</p>
+
+        <i class="ion-chevron-right icon"></i>
+
+        <ion-option-button class="button-assertive ion-ios-trash icon-left" ng-click="delete(person)">Delete</ion-option-button>
+      </ion-item>
+    </div>
+    <div>     <button class="button button-outline button-assertive" ng-click="deleteAll()">Supprimer entièrement la liste de course  </button>
+    </div>
+      © développée exclusivement pour Marie-Line Hazael <br>
+
+      © Wesley Isaac  --   Developpeur Web/ Mobile
+
+
+  </ion-content>
+</ion-view>

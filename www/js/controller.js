@@ -1,52 +1,86 @@
 angular.module('shopping')
 
 
-    .controller('ShoppingCtrl', function($scope, $http) {
-        var url = 'https://shopping-74698.firebaseio.com/items.json';
 
-        $scope.items = getItems();
 
-        $scope.addItem = function() {
-            var name = prompt("Que manque t'il à la maison ?");
-            if (name) {
-                var postData = {
-                    "name": name
-                };
-                $http.post(url, postData).success(function(data) {
-                    $scope.items = getItems();
-                });
-            }
-        };
+.controller('ShoppingCtrl', function($scope, $http ,$ionicPopup , $state ) {
+    var url = 'https://flemmapp.firebaseio.com/';
 
-        function getItems() {
-            var items = [];
-            $http.get(url).success(function(data) {
-                angular.forEach(data, function(value, key) {
-                    var name = {name: value.name};
-                    items.push(name);
-                });
+    $scope.items = getItems();
+
+    $scope.addItem = function() {
+        var name = prompt("what do u want ");
+        var lama = lama;
+
+        if (name) {
+            var postData = {
+                "name": name,
+                "date": new Date().getTime(),
+                "lama": lama
+
+
+
+
+            };
+            $http.post(url, postData).success(function(data) {
+                $scope.items = getItems()
             });
 
-            return items;
-        }
+
+        }};
+
+    $scope.items = getItems();
+
+    var lama = lama;
+        var postData = {
+            "name": name,
+            "date": new Date().getTime(),
+            "lama": lama
 
 
-        $scope.deleteItem = function() {
-            var name =  prompt('ëtes-vous sur de vouloir supprimer TOUTE la liste de course ? ');
-            if (name) {
-                var deleteData = {
-                    "name": name
-                };
-                $http.delete(url, deleteData).success(function(data) {
-                    $scope.items = getItems();
-                });
-            }
+
+
         };
 
 
-        $scope.deleteThis = function(item) {
-            $scope.list.$remove(item);
-        };
 
-    });
 
+
+
+    function getItems() {
+        var items = [];
+        $http.get(url).success(function (data) {
+            angular.forEach(data, function (value , key ) {
+                var name = {name: value.name};
+                var date = { date: value.date};
+                var id2 = { id2 : key };
+                items.push(name);
+                items.push(date);
+                items.push(id2);
+            });
+        });
+
+        return items;
+    }
+
+
+
+
+    $scope.deleteItem = function (key) {
+        var items = [];
+        var id2 = { id2 : key };
+        var item = item in items;
+        var date = {date : item.date };
+        $scope.items = [];
+
+
+
+        $http.delete(url ,this.items,  key).success(function(date, key) {
+
+
+
+        });
+ return items ;
+    };
+
+});

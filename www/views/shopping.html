@@ -11,7 +11,6 @@
 
 
 
-
     <ion-content>
 
 
@@ -21,11 +20,15 @@
 
 
         <ion-list>
-            <ion-item ng-repeat="item in items">
+            <ion-item ng-repeat="item in items | orderBy: 'key'">
                 {{item.name}}
+                {{item.date}}
+
+
+
                <div class="delete">
 
-                <button class="button button-icon ion-android-delete" ng-click="deleteThis(item)">
+                <button class="button button-icon ion-android-delete" ng-click="delete1(item)">
 
                 </button>
  </div>
